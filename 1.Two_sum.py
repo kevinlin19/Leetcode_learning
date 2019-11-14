@@ -9,3 +9,21 @@ class Solution:
                 if (candidate[-1] != i):
                     return [i, candidate[-1]]
 
+    # Second Solution
+    def twoSum_second(self, nums, target):
+        """
+        :type num: list[int]
+        :type target: int
+        ::type return: list[int]
+        """
+        hash_table = dict()
+        
+        for idx, num in enumerate(nums):
+            left = target - num
+            if left not in hash_table:
+                hash_table[num] = idx
+            else:
+                return [hash_table[left], idx]
+
+
+
